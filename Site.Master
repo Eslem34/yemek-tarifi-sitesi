@@ -1,0 +1,96 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.Master.cs" Inherits="YemekTarifiSitem.Site" %>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link href="file:///c:\users\monster\source\yemektarifisitem\yemektarifisitem\Kullanici.css" rel="stylesheet" />
+    
+    <asp:ContentPlaceHolder ID="MainContent" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <style type="text/css">
+        .auto-style5 {
+            width: 100%;
+            height: 40px;
+            background-color: #003366;
+        }
+
+        .auto-style6 {
+            width: 100px;
+        }
+
+        .auto-style7 {
+            width: 112px;
+        }
+
+        .auto-style8 {
+            width: 161px;
+        }
+
+        .auto-style9 {
+            width: 127px;
+        }
+
+        .auto-style10 {
+            width: 51px;
+        }
+        .auto-style11 {
+            text-align: left;
+        }
+        .auto-style12 {
+            font-size: large;
+        }
+    </style>
+
+</head>
+<body>
+    <form id="form1" runat="server">
+
+
+        <div style="margin-left: 300px; width: 700px; height: 150px; background-color: cadetblue;">
+            <asp:Image ID="Image1" runat="server" Height="147px" ImageUrl="~/resimler/kapak.jpg" Width="700px" />
+        </div>
+        <div>
+            <br />
+        </div>
+        <%--<div style="margin-left: 300px; width: 698px; height: 20px;"></div>--%>
+        <div style="margin-left: 300px; width: 696px; height: 39px; background-color:#fff : #FF9966; text-align: center; margin-top: 0px;">
+            <table class="auto-style5">
+                <tr>
+                    <td style="color: #000000; background-color: #FFFFFF" class="auto-style7"><strong><a href="Anasayfa.aspx">ANA SAYFA</a></strong></td>
+                    <td style="color: #000000; background-color: #FFFFFF" class="auto-style8"><strong><a href="GununYemegi.aspx">GÜNÜN YEMEĞİ</a></strong></td>
+                    <td style="color: #000000; background-color: #FFFFFF" class="auto-style9"><strong><a href="TarifOner.aspx">TARİF ÖNER</a></strong></td>
+                    <td style="color: #000000; background-color: #FFFFFF" class="auto-style10"><strong><a href="Hakkimizda.aspx">HAKKIMIZDA </a></strong></td>
+                    <td style="color: #000000; background-color: #FFFFFF" class="auto-style6"><strong>&nbsp; <a href="iletisim.aspx" style="background-color: #FFFFFF">İLETİŞİM</a></strong></td>
+                </tr>
+            </table>
+            <div>
+                <br />
+            </div>
+            <div>
+                <div style="width: 700px; height: 300px;">
+
+                    <div style="width: 200px; float: left; height: auto; background-color: #ce7171; margin-left: 0px; color: #000000;" class="auto-style11">
+                        <strong><span class="auto-style12">KATEGORİLER<br />
+                        </span>
+                        <br />
+                        </strong>
+                        <asp:DataList ID="DataList1" runat="server" style="text-align: left" Width="200px">
+                            <ItemTemplate>
+                                <div style="border: thin solid #C0C0C0">
+                                   <a href ="KategoriDetay.aspx?Kategoriid=<%#Eval("Kategoriid")%>"> <asp:Label ID="Label1" runat="server" Text='<%# Eval("KategoriAd") %>' style="font-weight: 700"></asp:Label></a>
+                                    &nbsp;(
+                                    <asp:Label ID="Label2" runat="server" Text='<%# Eval("KategoriAdet") %>'></asp:Label>
+                                    )</div>
+                            </ItemTemplate>
+                        </asp:DataList>
+                    </div>
+                    <div style="width: 450px; float: left; height: auto; background-color: #ce7171; margin-left: 50px; color: #FFFFFF;">
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </div>
+                </div>
+    </form>
+</body>
+</html>
